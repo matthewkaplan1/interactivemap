@@ -1,56 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<style type="text/css">
-	html, body {
-		margin: 0;
-		top: 0;
-		left;
-	}
-	.tooltip {
-		display: none;
-		color: white;
-		font-family:'Helvetica Neue', sans-serif;
-		font-size:1em;
-		font-weight:800;
-		border:0.5px solid #fff;
-		position:fixed;
-		background-color:black;
-		opacity:0;
-		padding:1%;
-/*		transition:0.25s ease-in-out;*/
-	}
-	.tooltip img {
-		background-color: black;
-		width: 25em;
-		height: auto;
-/*		transition: 0.5s ease-in-out;*/
-	}
-
-/*custom to this design file*/
-	path{
-		cursor: pointer;
-		transition: 0.25s ease-in-out;
-	}
-	path:hover {
-		fill: #5D4ADD;
-	}
-	.st82{
-		cursor: pointer;
-	}
-	.st82:hover {
-		stroke-width: 10;
-	}
-</style>
-<body>
-
-<!-- insert svg code here -->
-
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 26.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" onclick="updateImgTooltip('images/country1.png')"
+<svg version="1.1" onclick="updateImgTooltip('images/country1.png')" onmouseout="clearTooltip()"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 1080"
 	 style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
 <style type="text/css">
@@ -1841,7 +1791,7 @@
 </g>
 <g id="Layer_3">
 	<g id="heading">
-		<g id="heading_00000054985789655391187770000007874845711833655194_">
+		<g id="heading_00000143613153711488463360000012139579213512819840_">
 			<path class="st83" d="M87.44,89.71h1.7v29.27h25.29V89.71h1.71v64.31h-1.71v-33.53H89.14v33.53h-1.7V89.71z"/>
 			<path class="st83" d="M128.45,129.01c-0.19,15.82,2.94,24.15,11.27,24.15c9.47,0,10.32-10.13,10.51-11.65h1.71
 				c-0.09,1.23-1.23,13.26-12.22,13.26c-12.31,0-12.98-14.87-12.98-25.1c0-15.25,4.55-23.87,12.98-23.87
@@ -1870,7 +1820,7 @@
 </g>
 <g id="Layer_2">
 	<g id="text">
-		<g id="text_00000079467897502868790530000014381656925837019030_">
+		<g id="text_00000116220443368179600660000006475746453837370765_">
 			<path class="st84" d="M83.72,194.76h1.49v12.28h4.85l-0.21,1.31h-6.13V194.76z"/>
 			<path class="st84" d="M97.69,203.16c0,3.57-1.2,5.38-3.49,5.38c-2.35,0-3.49-1.74-3.49-5.34c0-3.52,1.37-5.15,3.55-5.15
 				C96.48,198.04,97.69,199.76,97.69,203.16z M92.21,203.2c0,2.76,0.69,4.07,2.01,4.07c1.32,0,1.98-1.33,1.98-4.08
@@ -3459,49 +3409,3 @@
 	</g>
 </g>
 </svg>
-
-
-<!-- end svg code here -->
-
-<div class="tooltip"></div>
-
-</body>
-<script type="text/javascript">
-
-let tooltip=document.querySelector('.tooltip')
-
-// gets position of mouse on the page
-function getpos(event) {
-	var e = window.event;
-	x = e.clientX ;
-	y = e.clientY ;
-} 
-
-function updateTooltip(text_to_display){
-	tooltip.innerHTML=text_to_display
-	getpos()
-	tooltip.style.display='block'
-	tooltip.style.opacity=1
-	tooltip.style.left=x+30+"px"
-	tooltip.style.top=y-30+"px"
-}
-
-function updateImgTooltip(img_to_display){
-	tooltip.style.display='block'
-	tooltip.innerHTML=''
-	tooltip.style.opacity=1
-	picture = document.createElement('img')
-	picture.src=img_to_display
-	tooltip.appendChild(picture)
-	getpos()
-	tooltip.style.left=x+30+"px"
-	tooltip.style.top=y-30+"px"
-}
-
-function clearTooltip() {
-	tooltip.style.display='none'
-	tooltip.style.opacity=0
-}
-
-</script>
-</html>
